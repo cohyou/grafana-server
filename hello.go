@@ -37,6 +37,11 @@ func handler(w http.ResponseWriter, r *http.Request) {
 }
 
 func main() {
-	http.HandleFunc("/hello", handler)
+    http.HandleFunc("/", handler)
+	http.HandleFunc("/search", handler)
+    http.HandleFunc("/query", handler)
+    http.HandleFunc("/annotations", handler)
+    http.HandleFunc("/tag-keys", handler)
+    http.HandleFunc("/tag-values", handler)
 	http.ListenAndServe(":3218", nil)
 }
